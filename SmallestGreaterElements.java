@@ -21,31 +21,31 @@ class SmallestGreaterElements {
 	}
 	
 	public static String nextGreatest(List<Integer> in) {
-		    StringBuilder retval = new StringBuilder();
+		StringBuilder retval = new StringBuilder();
 
-		    List<Integer> sorted = new LinkedList<Integer>();
-		    sorted.addAll(in);
-		    Collections.sort(sorted);
+		List<Integer> sorted = new LinkedList<Integer>();
+		sorted.addAll(in);
+		Collections.sort(sorted);
 
-		    HashMap<Integer,Integer> nextMap = new HashMap<Integer,Integer>();
+		HashMap<Integer,Integer> nextMap = new HashMap<Integer,Integer>();
 
-		    Integer prev = null;
-		    for( Integer val : sorted ){
+		Integer prev = null;
+		for( Integer val : sorted ){
 			if( prev != null && val.intValue() != prev.intValue() ) {
-			    nextMap.put(prev,val);
+				nextMap.put(prev,val);
 			}
-		    prev = val;
-		    }
+			prev = val;
+		}
 
-		    for( Integer val : in ){
+		for( Integer val : in ){
 			Integer next = nextMap.get(val);
 			if( next != null ){
-			    retval.append(next).append(' ');
+				retval.append(next).append(' ');
 			} else {
-			    retval.append("_ ");
+				retval.append("_ ");
 			}
-		    }
-
-		    return retval.toString().trim();
 		}
+
+		return retval.toString().trim();
+	}
 }
