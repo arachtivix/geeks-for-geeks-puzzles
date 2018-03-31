@@ -5,6 +5,7 @@ import java.util.*;
 import java.lang.*;
 
 class LargestNumberSumOfThreeOthersInSet {
+	//https://www.geeksforgeeks.org/find-largest-d-in-array-such-that-a-b-c-d/
 	public static void main (String[] args) {
 		Scanner sc = new Scanner(System.in);
 		List<Integer> in = new LinkedList<Integer>();
